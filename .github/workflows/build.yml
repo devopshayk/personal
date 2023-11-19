@@ -8,10 +8,10 @@ permissions:
   pages: write
   id-token: write
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+    
     steps:
-    - id: build-publish
-      uses: bitovi/github-actions-react-to-github-pages@v1.2.0
-      with:
-        path: build
+    - uses: actions/checkout@v3
+    - name: Build & Deploy React app to GitHub Pages
+      uses: MrKrishnaAgarwal/deploy-react-app-to-gh-pages@v1.0.0
